@@ -4,8 +4,8 @@ import requests
 import tableauserverclient as TSC
 import smtplib
 
-tableau_auth = TSC.TableauAuth('zak.g.data@gmail.com', '', 'betatestingfortableauserver')
-server = TSC.Server('https://10ax.online.tableau.com')
+tableau_auth = TSC.TableauAuth('Your_Login', 'Your_Password', 'Your_Site')
+server = TSC.Server('Your_Server')
 logging.basicConfig(level='INFO')
 server.version = '3.7'
 
@@ -43,11 +43,11 @@ def main():
             smtp.ehlo()
             smtp.starttls()
             smtp.ehlo()
-            smtp.login('zak.g.data@gmail.com', '')
+            smtp.login('Your_Email', '')
             subject = 'Poorly Named Field - ' + b.iat[i,0]
             body = 'Hello!\n\nPlease consider updating this field name to something more fitting: {}\n\nThanks, \nYour friendly neighborhood Tableau Admin'.format(b.iat[i,0])
             msg = f'Subject: {subject}\n\n{body}'
-            smtp.sendmail('zak.g.data@gmail.com', b.iat[i,1], msg)
+            smtp.sendmail('Your_Email', b.iat[i,1], msg)
             i += 1
 
             
