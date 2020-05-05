@@ -8,10 +8,10 @@ from tableauhyperapi import HyperProcess, Telemetry, \
     escape_name, escape_string_literal, \
     HyperException
 
-tableau_auth = TSC.TableauAuth('zak.g.data@gmail.com', 'Tr1force@', 'betatestingfortableauserver')
-server = TSC.Server('https://10ax.online.tableau.com')
-file_path = r'C:\Users\Zak\Desktop\Workbook_Info.hyper'
-project_id = '61be71a8-e85d-462a-8ac7-c794344f0394'
+tableau_auth = TSC.TableauAuth('Your_Username', 'Your_Password', 'Your_Site')
+server = TSC.Server('Your_Server')
+file_path = r'File_Location'
+project_id = 'Your_Project_ID'
 
 # TABLEAU SERVER CLIENT LIBRARY TO GET AND STORE WORKBOOK / OWNER DETAILS
 
