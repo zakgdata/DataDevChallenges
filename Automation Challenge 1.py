@@ -1,11 +1,11 @@
 from urllib.request import urlopen, Request
 import xml.etree.ElementTree as ET
 
-server_name = "10ax.online.tableau.com"
+server_name = "Your_Server"
 version = "3.4"
-site_url_id = "betatestingfortableauserver"
-personal_access_token_name = "Login_Token"
-personal_access_token_secret = "/aujPLFATDKknOKdaVHtJg==:JlvDdbtjlJ7dzTnqFyHfM4LUKbrGtfm6"
+site_url_id = "Your_Site"
+personal_access_token_name = "Your_Token_Name"
+personal_access_token_secret = "Your_Token_Secret"
 
 signin_url = "https://{server}/api/{version}/auth/signin".format(server=server_name, version=version)
 
@@ -13,7 +13,7 @@ request_xml = ET.Element('tsRequest')
 credentials = ET.SubElement(request_xml, 'credentials',
 personalAccessTokenName=personal_access_token_name,
 personalAccessTokenSecret=personal_access_token_secret)
-site_element = ET.SubElement(credentials, 'site', contentUrl="betatestingfortableauserver")
+site_element = ET.SubElement(credentials, 'site', contentUrl="site_url_id")
 request_data = ET.tostring(request_xml)
 
 # Send the request to the server
